@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+.banner {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(background2.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.navbar {
+  width: 95%;
+  margin: auto;
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 150px;
+  cursor: pointer;
+}
+
+.navbar ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 1rem;
+  position: relative;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+}
+
+.navbar ul li::after {
+  content: '';
+  height: 3px;
+  width: 0;
+  background: goldenrod;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: 0.5s;
+}
+
+.navbar ul li:hover::after {
+  width: 100%;
+}
+
+.hotel {
+  color: #fff;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+.hotel h1{
+  font-size: 8vw; /* Set font size relative to viewport width */
+  line-height: 1.2;
+  margin-left: -1vw; /* Set margin relative to viewport width */
+  color: transparent;
+  -webkit-text-stroke: 1px goldenrod;
+  background: url(back.png);
+  -webkit-background-clip: text;
+  background-position: 0 0;
+  animation: back 20s linear infinite;
+}
+
+@keyframes back{
+  100%{
+      background-position: 2000px 0;
+  }
+}
+
+.hotel h3{
+  color: goldenrod;
+}
+
+.hotel h3::after {
+  content: '';
+  height: 1px;
+  width: 0;
+  background: goldenrod;
+  position: absolute;
+  left: 0;
+  bottom: -0.3vw; /* Set bottom relative to viewport width */
+  transition: 0.5s;
+}
+
+.hotel h3:hover::after {
+  margin-left: 17vw; /* Set margin relative to viewport width */
+  width: 65%;
+}
+
+/* Add media queries for smaller screens */
+@media (max-width: 480px) {
+  .hotel h1 {
+      font-size: 12vw;
+      margin-left: -1.5vw;
+  }
+
+  .hotel h3::after {
+      bottom: -0.5vw;
+  }
+
+  .hotel h3:hover::after {
+      margin-left: 10vw;
+  }
+}
+
+/* Add media queries for larger screens */
+@media (min-width: 1200px) {
+  .hotel h1 {
+      font-size: 100px;
+      margin-left: -10px;
+  }
+}
+
+
+.buttons{
+  top: 80%;
+  position: absolute;
+  left: 50%;
+  transform:translate(-50%,-50%);
+  text-align: center;
+}
+.btn{
+  background: none;
+  border: 2px solid goldenrod;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  padding: 12px 20px;
+  margin: 15px;
+  cursor: pointer;
+  transition:  color 0.4s linear;
+  color: white;
+  position: relative;
+  padding-left: 50px;
+  padding-right: 50px;
+  font-size: 20px;
+  border-radius: 50px;
+}
+.btn::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: goldenrod;
+  z-index: -1;
+  transition: transform 0.5s;
+  transform-origin: 0 0;
+  transition-timing-function: cubic-bezier(0.5,1.6,0.4,0.7);  
+  border-radius: 50px;    
+}
+.btn1::before{
+  transform: scaleX(0);
+  border-radius: 50px;
+}
+.btn2::before{
+  transform: scaleX(0);
+  border-radius: 50px;
+}
+.btn1:hover::before{
+  transform: scaleX(1);
+  border-radius: 50px;
+}
+.btn2:hover::before{
+  transform: scaleX(1);
+  border-radius: 50px;
+}
