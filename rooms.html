@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="rooms.css">
+</head>
+<body>
+    <section class="home" id="home">
+        <div class="head_container">
+            <div class="box">
+                <div class="text">
+                    <h1>ROOMS</h1>
+                    <p>Enjoy A Luxury Experience.<br>Relax & Unwind.</p>
+                </div>
+            </div>
+            <div class="image">
+                <img src="bgnd3.jpeg" alt="" class="slide active">
+            </div>
+            <div class="image_item">
+
+                <img src="room1.jpg" alt="" class="slide" onclick="setSlideImage('room1.jpg'); setBackground('bgnd1.jpeg');">
+                <img src="room2.jpg" alt="" class="slide" onclick="setSlideImage('room2.jpg'); setBackground('bgnd2.jpeg');">
+                <img src="room3.jpg" alt="" class="slide" onclick="setSlideImage('room3.jpg'); setBackground('bgnd3.jpeg');">
+                <img src="room4.jpg" alt="" class="slide" onclick="setSlideImage('room4.jpg'); setBackground('bgnd4.jpeg');">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function setSlideImage(imageUrl) {
+            document.querySelector('.slide').src = imageUrl;
+        }
+        
+        function setBackground(imageUrl) {
+            const element = document.querySelector('.image');
+            element.style.backgroundImage = `url(${imageUrl})`;
+        }
+    </script>
+    
+</body>
+</html>
